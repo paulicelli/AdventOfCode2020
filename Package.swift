@@ -8,7 +8,8 @@ let package = Package(
     products: [
         .executable(name: "AdventOfCode", targets: ["AdventOfCode"]),
         .library(name: "Day1", targets: ["Day1"]),
-        .library(name: "Day2", targets: ["Day2"])],
+        .library(name: "Day2", targets: ["Day2"]),
+        .library(name: "Day3", targets: ["Day3"])],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
@@ -31,8 +32,15 @@ let package = Package(
                 .copy("day2.txt")
             ]),
         .target(
+            name: "Day3",
+            dependencies: [],
+            path: "Sources/Day3",
+            resources: [
+                .copy("day3.txt")
+            ]),
+        .target(
             name: "AdventOfCode",
-            dependencies: ["Day1", "Day2"]),
+            dependencies: ["Day1", "Day2", "Day3"]),
         .testTarget(
             name: "AdventOfCodeTests",
             dependencies: ["AdventOfCode"]),
