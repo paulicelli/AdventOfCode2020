@@ -11,7 +11,8 @@ let package = Package(
         .library(name: "Day2", targets: ["Day2"]),
         .library(name: "Day3", targets: ["Day3"]),
         .library(name: "Day4", targets: ["Day4"]),
-        .library(name: "Day5", targets: ["Day5"])],
+        .library(name: "Day5", targets: ["Day5"]),
+        .library(name: "Day6", targets: ["Day6"])],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
@@ -55,8 +56,15 @@ let package = Package(
                 .copy("day5.txt")
             ]),
         .target(
+            name: "Day6",
+            dependencies: [],
+            path: "Sources/Day6",
+            resources: [
+                .copy("day6.txt")
+            ]),
+        .target(
             name: "AdventOfCode",
-            dependencies: ["Day1", "Day2", "Day3", "Day4", "Day5"]),
+            dependencies: ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6"]),
         .testTarget(
             name: "AdventOfCodeTests",
             dependencies: ["AdventOfCode"]),

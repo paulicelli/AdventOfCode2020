@@ -4,6 +4,7 @@ import Day2
 import Day3
 import Day4
 import Day5
+import Day6
 
 print("Advent od Code 2020, Day 1:\n")
 if let day1 = Day1() {
@@ -37,5 +38,12 @@ print("Advent od Code 2020, Day 5:\n")
 if let day5 = Day5() {
     day5.printSolutionPart1()
     day5.printSolutionPart2()
+}
+print("---------------------------\n")
+
+print("Advent od Code 2020, Day 6:\n")
+if let day6 = Day6() {
+    day6.printSolutionPart1()
+    day6.printSolutionPart2()
 }
 print("---------------------------\n")
