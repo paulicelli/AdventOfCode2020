@@ -6,5 +6,5 @@ The main executable calls some Libraries inside the Sources folder. Every Librar
 
 ---
 
-### Documentation:
+### Documentation used:
 - <https://nshipster.com/swift-regular-expressions/>
