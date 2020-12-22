@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "AdventOfCode",
+    platforms: [.macOS(.v10_15)],
     products: [
         .executable(name: "AdventOfCode", targets: ["AdventOfCode"]),
         .library(name: "Day1", targets: ["Day1"]),
@@ -12,10 +13,11 @@ let package = Package(
         .library(name: "Day3", targets: ["Day3"]),
         .library(name: "Day4", targets: ["Day4"]),
         .library(name: "Day5", targets: ["Day5"]),
-        .library(name: "Day6", targets: ["Day6"])],
+        .library(name: "Day6", targets: ["Day6"]),
+        .library(name: "Day7", targets: ["Day7"])],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/paulicelli/Tree", from: "0.0.1"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -63,8 +65,15 @@ let package = Package(
                 .copy("day6.txt")
             ]),
         .target(
+            name: "Day7",
+            dependencies: ["Tree"],
+            path: "Sources/Day7",
+            resources: [
+                .copy("day7.txt")
+            ]),
+        .target(
             name: "AdventOfCode",
-            dependencies: ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6"]),
+            dependencies: ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6", "Day7"]),
         .testTarget(
             name: "AdventOfCodeTests",
             dependencies: ["AdventOfCode"]),
