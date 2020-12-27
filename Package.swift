@@ -17,7 +17,7 @@ let package = Package(
         .library(name: "Day7", targets: ["Day7"])],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/paulicelli/Tree", from: "0.0.1"),
+        // .package(url: "https://github.com/paulicelli/Tree", from: "0.0.3"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -66,10 +66,12 @@ let package = Package(
             ]),
         .target(
             name: "Day7",
-            dependencies: ["Tree"],
+            dependencies: [],
             path: "Sources/Day7",
             resources: [
-                .copy("day7.txt")
+                .copy("day7.txt"),
+                .copy("day7test1.txt"),
+                .copy("day7test2.txt"),
             ]),
         .target(
             name: "AdventOfCode",
