@@ -14,7 +14,8 @@ let package = Package(
         .library(name: "Day4", targets: ["Day4"]),
         .library(name: "Day5", targets: ["Day5"]),
         .library(name: "Day6", targets: ["Day6"]),
-        .library(name: "Day7", targets: ["Day7"])],
+        .library(name: "Day7", targets: ["Day7"]),
+        .library(name: "Day8", targets: ["Day8"])],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: "https://github.com/paulicelli/Tree", from: "0.0.3"),
@@ -74,8 +75,16 @@ let package = Package(
                 .copy("day7test2.txt"),
             ]),
         .target(
+            name: "Day8",
+            dependencies: [],
+            path: "Sources/Day8",
+            resources: [
+                .copy("day8.txt"),
+                .copy("day8test1.txt"),
+            ]),
+        .target(
             name: "AdventOfCode",
-            dependencies: ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6", "Day7"]),
+            dependencies: ["Day1", "Day2", "Day3", "Day4", "Day5", "Day6", "Day7", "Day8"]),
         .testTarget(
             name: "AdventOfCodeTests",
             dependencies: ["AdventOfCode"]),
