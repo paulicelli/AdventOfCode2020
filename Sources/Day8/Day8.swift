@@ -73,7 +73,7 @@ public struct Day8 {
             
             while !infiniteLoop {
                 guard programCounter <= commands.count-1 else {
-                    print("Value of accumulator ending gracefully:", accumulator)
+                    print("Value of accumulator ending gracefully:", accumulator, "command on line", i, "was changed in:", debugCommandsList[i])
                     return
                 }
                 
